@@ -93,7 +93,7 @@ if (message.content.startsWith('lollsasdfawed')) { /// This is The DMS Code Send
 
 client.on('message', message => {
             if (message.content === prefix + 'help') {
-              message.channel.send('**تم الارسال في الخاص** :white_check_mark:  ');
+              message.channel.send('**تم الارسال في الخاص** :emojii:  ');
                
             }
 }); 
@@ -101,14 +101,14 @@ client.on('message', message => {
 
    client.on('message', message => {
 	    if (message.content === prefix + 'sup') {
-              message.channel.send('**تم الارسال في الخاص** :white_check_mark:  ');
+              message.channel.send('**تم الارسال في الخاص** :emojii:  ');
                
             }
 }); 
 
 client.on('message', message => {
             if (message.content === prefix + 'inv') {
-              message.channel.send('**تم الارسال في الخاص** :white_check_mark:  ');
+              message.channel.send('**تم الارسال في الخاص** :emojii:  ');
                
             }
 }); 
