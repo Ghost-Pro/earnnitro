@@ -225,232 +225,66 @@ client.on('message', message => {
  
     }
 });
-
 client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === prefix + "help-ar") {
+ 
+ 
+ message.author.sendMessage(`
+**Dgymnasium. || الأوامر العامة :gear: **
+**
+❖ ${prefix}server   ➾ معلومات السيرفر ⦁
+❖ ${prefix}members    ➾ حالات الاعضاء مع عددهم ⦁
+ ❖ ${prefix}bot    ➾ معلومات البوت مع ذكر مصمم البوت ⦁
+❖ ${prefix}user    ➾ معلومات عنك او عن اي شخص ⦁
+❖ ${prefix}ping    ➾ لمعرفة سرعة البوت ⦁
+❖ ${prefix}avatar    ➾ يعرض صورتك او صورة اي شخص تمنشنه ⦁
+❖ ${prefix}serveravatar    ➾ يعرض صورة السيرفر ⦁
+❖ ${prefix}id     ➾ يعرض لك ايدي ⦁
+❖ ${prefix}say     ➾ يكرر اللي تكتبه ⦁
+❖ ${prefix}embed    ➾ يكرر الكلمة اللي تقولها مع امبيد  ⦁
+❖ ${prefix}emojis    ➾ يعرض كل ايموجيات السيرفر ⦁
+❖ ${prefix}new     ➾ لفتح تذكرة ⦁
+❖ ${prefix}close    ➾ لإغلاق تذكرة ⦁
+❖ ${prefix}color <number>   ➾ لاختيار لون ⦁
 
-    if (message.author.bot) return;
 
-     if (message.content  === prefix + "help") {
+**Dgymnasium. || الأوامر الادارية 🔐 **
 
-          const embed = new Discord.RichEmbed()
+❖ ${prefix}bc    ➾ لإرسال برودكاست بدون امبيد ⦁
+❖ ${prefix}2bc    ➾ لإرسال برودكاست بامبيد ⦁
+❖ ${prefix}servericon <link>    ➾ لتغيير صورة السيرفر ⦁
+❖ ${prefix}servername    ➾ لتغيير اسم السيرفر ⦁
+❖ ${prefix}clear <number>    ➾ مسح الشات بعدد ⦁
+❖ ${prefix}move @user    ➾ لسحب عضو لرومك الصوتي ⦁
+❖ ${prefix}mutechannel    ➾ لتقفيل الروم ⦁
+❖ ${prefix}unmutechannel    ➾ لفتح الروم ⦁
+❖ ${prefix}hchannel    ➾ لإخفاء الروم ⦁
+❖ ${prefix}schannel    ➾ لإظهار الروم ⦁
+❖ ${prefix}mute @user <time>    ➾ لإعضاء عضو ميوت مؤقت ⦁
+❖ ${prefix}unmute @user    ➾ لفك الميوت عن العضو ⦁
+❖ ${prefix}kick @user <reason>    ➾ لطرد عضو من السيرفر ⦁
+❖ ${prefix}ban    ➾ لحضر عضو من السيرفر ⦁
+❖ ${prefix}ccolors <number>    ➾ يصنع الوان مع اي عد تبيه ⦁
+❖ ${prefix}voiceonline    ➾ لعمل روم فويس اونلاين ⦁
+❖ ${prefix}setwelcome #room    ➾ لإختيار روم للترحيب ⦁
 
- 
 
- 
+**Dgymnasium. || اوامر الالعاب 🎲 **
 
-   .setColor('RANDOM')
+❖ ${prefix}fkk    ➾ لعبة فكك  ⦁
+❖ ${prefix}speed    ➾ اسرع كتابة ⦁
+❖ ${prefix}cuttweet    ➾ لعبة كت تويت ⦁
+❖ ${prefix}points    ➾ لمعرفة نقاطك ⦁
 
-    .setTimestamp()
 
- 
-
- .addField("╔[❖════════════❖]╗",' ‎ ')
-
- .addField("      help messgae system     ",' ‎ ')
-
- .addField("  ╚[❖════════════❖]╝`⦁",' ‎ ')
-
- .addField(`❖${prefix}help-ar     **لرسالة المساعدة باللغة العربية**`,' ‎ ')
-
- .addField(`❖${prefix}help-en      **help message on English**`,' ‎ ')
-
- .setFooter('help message')
-
- 
-
- 
-
-   message.channel.send({embed});
-
- 
-
- 
-
-    }
-
+**Dgymnasium Server.**
+`);
+ 
+ 
+    }
 });
 
- 
-
-client.on('message', message => {
-
-    if (message.author.bot) return;
-
-     if (message.content  === prefix + "help-ar") {
-
-          const embed = new Discord.RichEmbed()
-
- 
-
- 
-
-   .setColor('RANDOM')
-
-    .setTimestamp()
-
- 
-
- .addField("Dgymnasium",' ‎ ')
-
- .addField("   **الآوامر العامة**  ",' ‎ ')
-
- .addField("  ╚[❖════════════❖]╝`⦁",' ‎ ')
-
- .addField("❖ -server  ➾ معلومات السيرفر ⦁",' ‎ ')
-
- .addField("❖ -member   ➾ معلومات الاعضاء ⦁",' ‎ ')
-
- .addField("❖ -avatar  ➾ صورة حسابك ⦁",' ‎ ')
-
- .addField("❖ -serveravatar  ➾ صورة السيرفر ⦁",' ‎ ')
-
- .addField("❖ -bot  ➾ معلومات البوت ⦁",' ‎ ')
-
- .addField("❖ -id  ➾ اي دي ⦁",' ‎ ')
-
- .addField("❖ -say  ➾ يكرر الكلمة اللي تقولها ⦁",' ‎ ')
-
- .addField("❖ -embed ➾ يكرر الكلمة اللي تقولها مع امبيد ⦁",' ‎ ')
-
- .addField("❖ -emojis  ➾ كل ايموجيات السيرفر ⦁",' ‎ ')
-
- .addField("❖ -bans   ➾ عدد الاشخاص المبندة ⦁",' ‎ ')
-
- .addField("❖  -bc  ➾ ارسال برودكاست بامبيد ⦁",' ‎ ')
-
- .addField("❖ -2bc  ➾ ارسال برودكاست مع امبيد ⦁",' ‎ ')
-
- .addField("❖ -new  ➾ لفتح تذكرة⦁",' ‎ ')
-
- .addField("❖ -close   ➾ لاغلاق تذكرة ⦁",' ‎ ')
-
- .addField("❖ -servericon <link>  ➾ لتغيير صورة السيرفر ⦁",' ‎ ')
-
- .addField("❖ -servername <name>  ➾ لتغيير اسم السيرفر ⦁",' ‎ ')
-
- .addField("❖ -clear <number>  ➾ مسح شات بعدد ⦁",' ‎ ')
-
- .addField("❖ -move @user  ➾ لسحب العضو لرومك الصوتي ⦁",' ‎ ')
-
- .addField("❖ -hchannel ➾ لإخفاء الروم ⦁",' ‎ ')
-
- .addField("❖ -schannel  ➾ لإظهار الروم  ⦁",' ‎ ')
-
- .addField("❖ -mute @user <time>  ➾ اعضاء عضو ميوت مع الوقت ⦁",' ‎ ')
-
- .addField("❖ -unmute   ➾ لفك الميوت عن العضو ⦁",' ‎ ')
-
- .addField("❖ -kick   ➾ لطرد عضو من السيرفر ⦁",' ‎ ')
-
- .addField("❖ -ban   ➾ لحضر عضو من السيرفر ⦁",' ‎ ')
-
- .addField("❖ -mutechannel  ➾ لتقفيل الروم ⦁",' ‎ ')
-
- .addField("❖ -unmutechannel   ➾ لفتح الروم ⦁",' ‎ ')
-
- .addField("❖ -ccolors <number>  ➾ يصنع الوان مع العدد اللي تبيه ⦁",' ‎ ')
-
- .addField("❖ -color <number>   ➾ لإختيار لون ⦁",' ‎ ')
-
- .addField("❖ -user   ➾ معلوماتك او معلومات أي شخص ⦁",' ‎ ')
-
- .addField("❖ -ping   ➾ لمعرفة سرعة البوت ⦁",' ‎ ')
-
- .addField("❖ -voicenline  ➾ لعمل روم فويس اونلاين ⦁",' ‎ ')
-
- .addField("❖ -setwelcome <roomname> ➾ لتحديد روم للترحيب ⦁",' ‎ ')
-
- .addField("❖ -fkk   ➾ لعبة فكك ⦁",' ‎ ')
-
- .addField("❖ -speed   ➾ اسرع كتابة ⦁",' ‎ ')
-
- .addField("❖ -cuttweet  ➾ لعبة كت تويت ⦁",' ‎ ')
-
- .addField("❖ -points  ➾ لمعرفة نقاطك ⦁",' ‎ ')
-
-
- .setFooter('رسالة المساعدة باللغة العربية')
-
-
- 
-
- 
-
-   message.channel.send({embed});
-
- 
-
- 
-
-    }
-
-});
-
- 
-
-   client.on('message', message => {
-
-    if (message.author.bot) return;
-
-     if (message.content  === prefix + "help-en") {
-
-          const embed = new Discord.RichEmbed()
-
- 
-
- 
-
-   .setColor('RANDOM')
-
-    .setTimestamp()
-
- 
-
- .addField("╔[❖════════════❖]╗",' ‎ ')
-
- .addField("      general Commands     ",' ‎ ')
-
- .addField("  ╚[❖════════════❖]╝`⦁",' ‎ ')
-
- .addField("❖ #roll <number> ➾ for make a roll ⦁",' ‎ ')
-
- .addField("❖ #member ➾ for members info ⦁",' ‎ ')
-
- .addField("❖ #av ➾ for see You Img ⦁",' ‎ ')
-
- .addField("❖ #ser-av ➾ for see Server img ⦁",' ‎ ')
-
- .addField("❖ #uptime ➾ time bot online ⦁",' ‎ ')
-
- .addField("❖ #id ➾ for see You info ⦁",' ‎ ')
-
- .addField("❖ #inv ➾ make a invite link ⦁",' ‎ ')
-
- .addField("❖ #own ➾ Owner Of bot⦁",' ‎ ')
-
- .addField("❖ #top inv ➾ for see Tov invite ⦁",' ‎ ')
-
- .addField("❖ ❖ #ping ➾ for see Ping of bot ⦁",' ‎ ')
-
- .addField("❖ ❖ #server ➾ for server info ⦁",' ‎ ')
-
- 
-
- .setFooter('help in EN')
-
- 
-
- 
-
-   message.channel.send({embed});
-
- 
-
- 
-
-    }
-
-});
 
 
 
