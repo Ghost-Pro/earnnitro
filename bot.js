@@ -116,8 +116,8 @@ if (message.content.startsWith('lollsasdfawed')) { /// This is The DMS Code Send
 }); 
 
 client.on('message', message => {
-            if (message.content === prefix + 'help') {
-              message.channel.send('**تم الارسال في الخاص** :emojii:  ');
+            if (message.content === prefix + 'help-ar') {
+              message.channel.send('**تم الارسال في الخاص**');
                
             }
 }); 
@@ -178,7 +178,7 @@ if (message.content.startsWith(prefix + 'setavatar')) {
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === prefix + "help") {
+     if (message.content === prefix + "dkjdjd") {
  
  
  message.author.sendMessage(`
@@ -225,6 +225,235 @@ client.on('message', message => {
  
     }
 });
+
+client.on('message', message => {
+
+    if (message.author.bot) return;
+
+     if (message.content  === prefix + "help") {
+
+          const embed = new Discord.RichEmbed()
+
+ 
+
+ 
+
+   .setColor('RANDOM')
+
+    .setTimestamp()
+
+ 
+
+ .addField("╔[❖════════════❖]╗",' ‎ ')
+
+ .addField("      help messgae system     ",' ‎ ')
+
+ .addField("  ╚[❖════════════❖]╝`⦁",' ‎ ')
+
+ .addField(`❖${prefix}help-ar     **لرسالة المساعدة باللغة العربية**`,' ‎ ')
+
+ .addField(`❖${prefix}help-en      **help message on English**`,' ‎ ')
+
+ .setFooter('help message')
+
+ 
+
+ 
+
+   message.channel.send({embed});
+
+ 
+
+ 
+
+    }
+
+});
+
+ 
+
+client.on('message', message => {
+
+    if (message.author.bot) return;
+
+     if (message.content  === prefix + "help-ar") {
+
+          const embed = new Discord.RichEmbed()
+
+ 
+
+ 
+
+   .setColor('RANDOM')
+
+    .setTimestamp()
+
+ 
+
+ .addField("Dgymnasium",' ‎ ')
+
+ .addField("   **الآوامر العامة**  ",' ‎ ')
+
+ .addField("  ╚[❖════════════❖]╝`⦁",' ‎ ')
+
+ .addField("❖ -server  ➾ معلومات السيرفر ⦁",' ‎ ')
+
+ .addField("❖ -member   ➾ معلومات الاعضاء ⦁",' ‎ ')
+
+ .addField("❖ -avatar  ➾ صورة حسابك ⦁",' ‎ ')
+
+ .addField("❖ -serveravatar  ➾ صورة السيرفر ⦁",' ‎ ')
+
+ .addField("❖ -bot  ➾ معلومات البوت ⦁",' ‎ ')
+
+ .addField("❖ -id  ➾ اي دي ⦁",' ‎ ')
+
+ .addField("❖ -say  ➾ يكرر الكلمة اللي تقولها ⦁",' ‎ ')
+
+ .addField("❖ -embed ➾ يكرر الكلمة اللي تقولها مع امبيد ⦁",' ‎ ')
+
+ .addField("❖ -emojis  ➾ كل ايموجيات السيرفر ⦁",' ‎ ')
+
+ .addField("❖ -bans   ➾ عدد الاشخاص المبندة ⦁",' ‎ ')
+
+ .addField("❖  -bc  ➾ ارسال برودكاست بامبيد ⦁",' ‎ ')
+
+ .addField("❖ -2bc  ➾ ارسال برودكاست مع امبيد ⦁",' ‎ ')
+
+ .addField("❖ -new  ➾ لفتح تذكرة⦁",' ‎ ')
+
+ .addField("❖ -close   ➾ لاغلاق تذكرة ⦁",' ‎ ')
+
+ .addField("❖ -servericon <link>  ➾ لتغيير صورة السيرفر ⦁",' ‎ ')
+
+ .addField("❖ -servername <name>  ➾ لتغيير اسم السيرفر ⦁",' ‎ ')
+
+ .addField("❖ -clear <number>  ➾ مسح شات بعدد ⦁",' ‎ ')
+
+ .addField("❖ -move @user  ➾ لسحب العضو لرومك الصوتي ⦁",' ‎ ')
+
+ .addField("❖ -hchannel ➾ لإخفاء الروم ⦁",' ‎ ')
+
+ .addField("❖ -schannel  ➾ لإظهار الروم  ⦁",' ‎ ')
+
+ .addField("❖ -mute @user <time>  ➾ اعضاء عضو ميوت مع الوقت ⦁",' ‎ ')
+
+ .addField("❖ -unmute   ➾ لفك الميوت عن العضو ⦁",' ‎ ')
+
+ .addField("❖ -kick   ➾ لطرد عضو من السيرفر ⦁",' ‎ ')
+
+ .addField("❖ -ban   ➾ لحضر عضو من السيرفر ⦁",' ‎ ')
+
+ .addField("❖ -mutechannel  ➾ لتقفيل الروم ⦁",' ‎ ')
+
+ .addField("❖ -unmutechannel   ➾ لفتح الروم ⦁",' ‎ ')
+
+ .addField("❖ -ccolors <number>  ➾ يصنع الوان مع العدد اللي تبيه ⦁",' ‎ ')
+
+ .addField("❖ -color <number>   ➾ لإختيار لون ⦁",' ‎ ')
+
+ .addField("❖ -user   ➾ معلوماتك او معلومات أي شخص ⦁",' ‎ ')
+
+ .addField("❖ -ping   ➾ لمعرفة سرعة البوت ⦁",' ‎ ')
+
+ .addField("❖ -voicenline  ➾ لعمل روم فويس اونلاين ⦁",' ‎ ')
+
+ .addField("❖ -setwelcome <roomname> ➾ لتحديد روم للترحيب ⦁",' ‎ ')
+
+ .addField("❖ -fkk   ➾ لعبة فكك ⦁",' ‎ ')
+
+ .addField("❖ -speed   ➾ اسرع كتابة ⦁",' ‎ ')
+
+ .addField("❖ -cuttweet  ➾ لعبة كت تويت ⦁",' ‎ ')
+
+ .addField("❖ -points  ➾ لمعرفة نقاطك ⦁",' ‎ ')
+
+
+ .setFooter('رسالة المساعدة باللغة العربية')
+
+
+ 
+
+ 
+
+   message.channel.send({embed});
+
+ 
+
+ 
+
+    }
+
+});
+
+ 
+
+   client.on('message', message => {
+
+    if (message.author.bot) return;
+
+     if (message.content  === prefix + "help-en") {
+
+          const embed = new Discord.RichEmbed()
+
+ 
+
+ 
+
+   .setColor('RANDOM')
+
+    .setTimestamp()
+
+ 
+
+ .addField("╔[❖════════════❖]╗",' ‎ ')
+
+ .addField("      general Commands     ",' ‎ ')
+
+ .addField("  ╚[❖════════════❖]╝`⦁",' ‎ ')
+
+ .addField("❖ #roll <number> ➾ for make a roll ⦁",' ‎ ')
+
+ .addField("❖ #member ➾ for members info ⦁",' ‎ ')
+
+ .addField("❖ #av ➾ for see You Img ⦁",' ‎ ')
+
+ .addField("❖ #ser-av ➾ for see Server img ⦁",' ‎ ')
+
+ .addField("❖ #uptime ➾ time bot online ⦁",' ‎ ')
+
+ .addField("❖ #id ➾ for see You info ⦁",' ‎ ')
+
+ .addField("❖ #inv ➾ make a invite link ⦁",' ‎ ')
+
+ .addField("❖ #own ➾ Owner Of bot⦁",' ‎ ')
+
+ .addField("❖ #top inv ➾ for see Tov invite ⦁",' ‎ ')
+
+ .addField("❖ ❖ #ping ➾ for see Ping of bot ⦁",' ‎ ')
+
+ .addField("❖ ❖ #server ➾ for server info ⦁",' ‎ ')
+
+ 
+
+ .setFooter('help in EN')
+
+ 
+
+ 
+
+   message.channel.send({embed});
+
+ 
+
+ 
+
+    }
+
+});
+
+
+
 
 client.on('message', message => {
     if (message.author.bot) return;
