@@ -117,7 +117,29 @@ if (message.content.startsWith('lollsasdfawed')) { /// This is The DMS Code Send
 
 client.on('message', message => {
             if (message.content === prefix + 'help-ar') {
-              message.channel.send('**تم الارسال في الخاص**');
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-en') {
+              message.channel.send('** The transmitter was in your :white_check_mark: **');
+               
+            }
+}); 
+
+
+
+client.on('message', message => {
+            if (message.content === prefix + 'help') {
+              message.channel.send('** **
+لـرؤيــــة  اوامـــر البـــوت بالــغـة العـربــيـة 
+-help-ar
+------------------------------------
+To see the orders of the English bot
+-help-en
+****');
                
             }
 }); 
@@ -286,6 +308,66 @@ client.on('message', message => {
 });
 
 
+client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === prefix + "help-en") {
+ 
+ 
+ message.author.sendMessage(`
+**Dgymnasium. || General commands :gear: **
+**
+❖ ${prefix}server   ➾ Server Information ⦁
+❖ ${prefix}members    ➾ Cases of members with their number ⦁
+ ❖ ${prefix}bot    ➾ Information bot with the mention of bot designer ⦁
+❖ ${prefix}user    ➾ Information about you or about anyone ⦁
+❖ ${prefix}ping    ➾ To know the speed of the bot ⦁
+❖ ${prefix}avatar    ➾ Displays your picture or the image of any person you wish ⦁
+❖ ${prefix}serveravatar    ➾ Displays the server image ⦁
+❖ ${prefix}id     ➾ It shows you Eddie ⦁
+❖ ${prefix}say     ➾ Repeat what you write ⦁
+❖ ${prefix}embed    ➾ Repeats the word you say with Impeed  ⦁
+❖ ${prefix}emojis    ➾ Displays all server ideologies ⦁
+❖ ${prefix}new     ➾ To open a ticket ⦁
+❖ ${prefix}close    ➾ To close a ticket ⦁
+❖ ${prefix}color <number>   ➾ To choose a color ⦁
+
+
+**Dgymnasium. || Administrative Orders 🔐 **
+
+❖ ${prefix}bc    ➾ To send a podcast without an emped ⦁
+❖ ${prefix}2bc    ➾ To send a pamped podcast ⦁
+❖ ${prefix}servericon <link>    ➾ To change the server image ⦁
+❖ ${prefix}servername    ➾To change the name of the server ⦁
+❖ ${prefix}clear <number>    ➾ Clear the number by number ⦁
+❖ ${prefix}move @user    ➾ To drag a member to your podcast ⦁
+❖ ${prefix}mutechannel    ➾ To quit the Roman ⦁
+❖ ${prefix}unmutechannel    ➾ To open the rum ⦁
+❖ ${prefix}hchannel    ➾ To hide the rum ⦁
+❖ ${prefix}schannel    ➾ To show the rum ⦁
+❖ ${prefix}mute @user <time>    ➾ Members of a temporary member ⦁
+❖ ${prefix}unmute @user    ➾ To unselect the mute from the member ⦁
+❖ ${prefix}kick @user <reason>    ➾ To expel a member from the server ⦁
+❖ ${prefix}ban    ➾ A member of the server ⦁
+❖ ${prefix}ccolors <number>    ➾ Makes colors with any count ⦁
+❖ ${prefix}voiceonline    ➾ To work Rom Voice Online ⦁
+❖ ${prefix}setwelcome #room    ➾ To choose Rom to welcome ⦁
+
+
+**Dgymnasium. || Games orders 🎲 **
+
+❖ ${prefix}fkk    ➾ Game fkk  ⦁
+❖ ${prefix}speed    ➾ Fastest typing ⦁
+❖ ${prefix}cuttweet    ➾ Game CutTweet ⦁
+❖ ${prefix}points    ➾ To know your points ⦁
+
+
+**Dgymnasium Server.**
+`);
+ 
+ 
+    }
+});
+
 
 
 
@@ -309,7 +391,7 @@ client.on('message', message => {
 	     
  message.author.sendMessage(`
  :gear: Support :gear:
-https://discord.gg/zGrRRj9
+https://discord.gg/pevGxGP
 `);
     }
 });
