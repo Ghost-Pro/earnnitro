@@ -133,13 +133,14 @@ client.on('message', message => {
 
 client.on('message', message => {
             if (message.content === prefix + 'help') {
-              message.channel.send('** **
-لـرؤيــــة  اوامـــر البـــوت بالــغـة العـربــيـة 
--help-ar
-------------------------------------
-To see the orders of the English bot
--help-en
-****');
+              message.channel.send('**لـرؤيــــة  اوامـــر البـــوت بالــغـة العـربــيـة   -help-ar**');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help') {
+              message.channel.send('**To see the orders of the English bot    -help-en**');
                
             }
 }); 
