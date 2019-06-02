@@ -269,6 +269,8 @@ client.on('message', message => {
 ❖ ${prefix}emojis    ➾ يعرض كل ايموجيات السيرفر ⦁
 ❖ ${prefix}new     ➾ لفتح تذكرة ⦁
 ❖ ${prefix}close    ➾ لإغلاق تذكرة ⦁
+❖ ${prefix}temp    ➾ لعمل روم مؤقت ⦁
+❖ ${prefix}uptime    ➾ لمعرفة كم وقت للبوت شغال ⦁
 ❖ ${prefix}color <number>   ➾ لاختيار لون ⦁
 
 
@@ -301,7 +303,8 @@ client.on('message', message => {
 ❖ ${prefix}points    ➾ لمعرفة نقاطك ⦁
 
 
-**Dgymnasium Server.**
+Dgymnasium Server.
+**
 `);
  
  
@@ -362,7 +365,8 @@ client.on('message', message => {
 ❖ ${prefix}points    ➾ To know your points ⦁
 
 
-**Dgymnasium Server.**
+Dgymnasium Server.
+**
 `);
  
  
@@ -1431,7 +1435,7 @@ ReBeL.guild.roles.filter(rebel => isNaN(rebel)).forEach(codes => codes.delete())
 });
 client.on('message', message => {
      if (message.author.bot) return;
-if (message.content.startsWith("asdsade")) {
+if (message.content.startsWith("-uptime")) {
     let uptime = client.uptime;
 
     let days = 0;
@@ -2374,7 +2378,7 @@ const cuttweet = [     'كت تويت ‏| تخيّل لو أنك سترسم ش�
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL) 
- .addField('3bker Community ©' ,
+ .addField('Yandex Programmers' ,
   `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[id] Send By: ' + message.author.username)
@@ -2395,7 +2399,7 @@ client.on('message', function(message) {
     }
 });
  client.on('message', async message => {
-  if(message.content.startsWith("asddfdsda")) {
+  if(message.content.startsWith(prefix + "temp")) {
     await message.channel.send("ارسل اسم الروم").then(e => {
     let filter = m => m.author.id === message.author.id
     let name = '';
@@ -3075,7 +3079,7 @@ var ApL = `${Math.round(client.ping)}`
 
   client.on('message', message => {
      if(!message.channel.guild) return;
-                if(message.content.startsWith(prefix + 'allbots')) {
+                if(message.content.startsWith(prefix + 'asdffdsots')) {
  
    
     if (message.author.bot) return;
@@ -3322,7 +3326,7 @@ client.on('message',async message => {
   var duration;
   var gMembers;
   var filter = m => m.author.id === message.author.id;
-  if(message.content.startsWith(prefix + "gdasdsdy")) {
+  if(message.content.startsWith(prefix + "giveaway")) {
      //return message.channel.send(':heavy_multiplication_x:| **هذا الامر معطل حاليا.. ``حاول في وقت لاحق``**');
     if(!message.guild.member(message.author).hasPermission('MANAGE_GUILD')) return message.channel.send(':heavy_multiplication_x:| **يجب أن يكون لديك خاصية التعديل على السيرفر**');
     message.channel.send(`:eight_pointed_black_star:| **من فضلك اكتب اسم الروم**`).then(msgg => {
@@ -3496,7 +3500,7 @@ possibleInvites.push([inviteCount, exec]);
     }
 })
  client.on('message', message => {
-    if(message.content.startsWith(prefix + 'moveall')) {
+    if(message.content.startsWith('mosdfsfdll')) {
      if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send('**لايوجد لديك صلاحية سحب الأعضاء**');
        if(!message.guild.member(client.user).hasPermission("MOVE_MEMBERS")) return message.reply("**لايوجد لدي صلاحية السحب**");
     if (message.member.voiceChannel == null) return message.channel.send(`**الرجاء الدخول لروم صوتي**`)
