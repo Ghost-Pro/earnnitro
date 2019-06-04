@@ -123,6 +123,13 @@ client.on('message', message => {
 }); 
 
 client.on('message', message => {
+            if (message.content === '#credits <@567694723679125514>') {
+              message.channel.send('**ZKrainos🌙, your :credit_card: balance is `$1481586`.**');
+               
+            }
+}); 
+
+client.on('message', message => {
             if (message.content === prefix + 'help-en') {
               message.channel.send('** The transmitter was in your :white_check_mark: **');
                
