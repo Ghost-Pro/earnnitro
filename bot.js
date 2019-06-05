@@ -27,7 +27,7 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const sql = require("sqlite");
 const dateFormat = require('dateformat'); 
 const pretty = require('pretty-ms') 
-const prefix = '=';
+const prefix = '-';
 var table = require('table').table
 var ti={}  
 ,spee={}
@@ -133,14 +133,14 @@ client.on('message', message => {
 
 client.on('message', message => {
             if (message.content === prefix + 'help') {
-              message.channel.send('**لـرؤيــــة  اوامـــر البـــوت بالــغـة العـربــيـة   -help-ar**');
+              message.channel.send('**لـرؤيــــة  اوامـــر البـــوت بالــغـة العـربــيـة   ${prefix}help-ar**');
                
             }
 }); 
 
 client.on('message', message => {
             if (message.content === prefix + 'help') {
-              message.channel.send('**To see the orders of the English bot    -help-en**');
+              message.channel.send('**To see the orders of the English bot    ${prefix}help-en**');
                
             }
 }); 
@@ -199,62 +199,14 @@ if (message.content.startsWith(prefix + 'setavatar')) {
 
 
 
-client.on('message', message => {
-    if (message.author.bot) return;
-     if (message.content === prefix + "dkjdjd") {
- 
- 
- message.author.sendMessage(`
- **>Commands :gear: •**
-**---------------------**
 
-**❯ Public Commands | الأوامر العامة :**
-**
-» ${prefix}server  |  > يعرض لك معلومات السيرفر <<<
-» ${prefix}bot  |  > يعرض لك معلومات البوت <<<
-» ${prefix}new  |  > لفتح تذكرة <<<
-» ${prefix}rooms  |  >  يعرض لك كل الرومات الي بالسيرفر مع عددها <<<
-» ${prefix}avatar |  > صورة اي شخص تمنشنو <<<
-» ${prefix}emojis |  > يعرض كل ايموجيات السيرفر <<<
-» ${prefix}say |  > يكرر الكلام الي تكتبو <<<
-» ${prefix}serveravatar |  > يعرض صورة السيرفر <<<
-**
-**---------------------**
-
-**❯ Staff Commands | الأوامر الإدارية :**
-**
-» ${prefix}move @user  |  > يعرض لك معلومات البوت <<<
-» ${prefix}bc  |  > ارسال برودكاست بدون امبيد <<<
-» ${prefix}2bc  |  > ارسال برودكاست بامبيد <<<
-» ${prefix}clear <number>  |  > مسح الشات بعدد <<<
-» ${prefix}mute @user <time>  |  > لأعطاء شخص ميوت <<<
-» ${prefix}unmute @user  |  > لفك الميوت عن شخص <<<
-» ${prefix}kick @user <reason>  |  > طرد شخص من السيرفر <<<
-» ${prefix}ban @user <reason>  |  > حضر شخص من السيرفر <<<
-» ${prefix}ccolors <number>  |  > يعرض لك معلومات البوت <<<
-» ${prefix}servername <name>  |  > لتغيير اسم السيرفر <<<
-» ${prefix}servericon <link>  |  > لتغيير صورة السيرفر <<<
-**
-**---------------------**
-**❯ Games Commands | أوامر الالعاب**
-**
-» ${prefix}speed |  > لعبه اسرع كتابة <<<
-» ${prefix}cuttweet |  > لعبة كت تويت <<<
-» ${prefix}fkk  |  > لعبة فكك كلام <<<
-**
-**---------------------**
-`);
- 
- 
-    }
-});
 client.on('message', message => {
     if (message.author.bot) return;
      if (message.content === prefix + "help-ar") {
  
  
  message.author.sendMessage(`
-**Polaris. || الأوامر العامة :globe_with_meridians: **
+**الأوامر العامة :globe_with_meridians: **
 **
 ❖ ${prefix}server   ➾ معلومات السيرفر ⦁
 ❖ ${prefix}members    ➾ حالات الاعضاء مع عددهم ⦁
@@ -274,7 +226,7 @@ client.on('message', message => {
 ❖ ${prefix}color <number>   ➾ لاختيار لون ⦁
 **
 
-**Polaris. || الأوامر الادارية :lock: **
+**الأوامر الادارية :lock: **
 **
 ❖ ${prefix}bc    ➾ لإرسال برودكاست بدون امبيد ⦁
 ❖ ${prefix}2bc    ➾ لإرسال برودكاست بامبيد ⦁
@@ -292,10 +244,9 @@ client.on('message', message => {
 ❖ ${prefix}ban    ➾ لحضر عضو من السيرفر ⦁
 ❖ ${prefix}ccolors <number>    ➾ يصنع الوان مع اي عد تبيه ⦁
 ❖ ${prefix}voiceonline    ➾ لعمل روم فويس اونلاين ⦁
-❖ ${prefix}setwelcome #room    ➾ لإختيار روم للترحيب ⦁
 **
 
-**Polaris	. || اوامر الالعاب :video_game: **
+**اوامر الالعاب :video_game: **
 **
 ❖ ${prefix}fkk    ➾ لعبة فكك  ⦁
 ❖ ${prefix}speed    ➾ اسرع كتابة ⦁
@@ -303,8 +254,7 @@ client.on('message', message => {
 ❖ ${prefix}points    ➾ لمعرفة نقاطك ⦁
 **
 
-Polaris Bot.
-**
+**Yandex Programmers.**
 `);
  
  
@@ -318,11 +268,11 @@ client.on('message', message => {
  
  
  message.author.sendMessage(`
-**Polaris. || General commands :gear: **
+**General commands :gear: **
 **
 ❖ ${prefix}server   ➾ Server Information ⦁
 ❖ ${prefix}members    ➾ Cases of members with their number ⦁
- ❖ ${prefix}bot    ➾ Information bot with the mention of bot designer ⦁
+❖ ${prefix}bot    ➾ Information bot with the mention of bot designer ⦁
 ❖ ${prefix}user    ➾ Information about you or about anyone ⦁
 ❖ ${prefix}ping    ➾ To know the speed of the bot ⦁
 ❖ ${prefix}avatar    ➾ Displays your picture or the image of any person you wish ⦁
@@ -334,10 +284,10 @@ client.on('message', message => {
 ❖ ${prefix}new     ➾ To open a ticket ⦁
 ❖ ${prefix}close    ➾ To close a ticket ⦁
 ❖ ${prefix}color <number>   ➾ To choose a color ⦁
+**
 
-
-**Polaris. || Administrative Orders 🔐 **
-
+**Administrative Orders :lock: **
+**
 ❖ ${prefix}bc    ➾ To send a podcast without an emped ⦁
 ❖ ${prefix}2bc    ➾ To send a pamped podcast ⦁
 ❖ ${prefix}servericon <link>    ➾ To change the server image ⦁
@@ -354,18 +304,17 @@ client.on('message', message => {
 ❖ ${prefix}ban    ➾ A member of the server ⦁
 ❖ ${prefix}ccolors <number>    ➾ Makes colors with any count ⦁
 ❖ ${prefix}voiceonline    ➾ To work Rom Voice Online ⦁
+**
 
-
-**Polaris. || Games orders 🎲 **
-
+**Polaris. || Games orders :video_game: **
+**
 ❖ ${prefix}fkk    ➾ Game fkk  ⦁
 ❖ ${prefix}speed    ➾ Fastest typing ⦁
 ❖ ${prefix}cuttweet    ➾ Game CutTweet ⦁
 ❖ ${prefix}points    ➾ To know your points ⦁
-
-
-Polaris Bot.
 **
+
+**Yandex Programmers.**
 `);
  
  
