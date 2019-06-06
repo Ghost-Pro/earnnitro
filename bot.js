@@ -34,7 +34,7 @@ var ti={}
 ,attentions={};
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = ['Polaris.','-inv','-sup','-help'];
+    var setGame = ['Prèmix.','-inv','-sup','-help'];
     var i = -1;
     var j = 0;
     setInterval(function (){
