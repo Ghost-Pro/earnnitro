@@ -97,12 +97,6 @@ client.on('message', message => {
             }
 }); 
 
-client.on('message', message => {
-            if (message.content === 'c <@539541145835929623>') {
-              message.channel.send('** ! Mr | Wister :credit_card: balance is `$982767`.**');
-               
-            }
-}); 
 
 client.on('message', message => {
             if (message.content === prefix + 'help-en') {
