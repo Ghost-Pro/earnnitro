@@ -2122,14 +2122,14 @@ member.guild.fetchInvites().then(guildInvites => {
                               if (err) return console.log(err);
       
                                     ctx.font = "bold 12px Arial";
-                              ctx.fontSize = '20px';
+                              ctx.fontSize = '22px';
                               ctx.fillStyle = "#f1f1f1";
                                 ctx.fillText(member.user.username, 200, 150);
                               
                               //NAMEً
                               ctx.font = "bold 12px Arial";
-                              ctx.fontSize = '20px';
-                              ctx.fillStyle = "#f1f1f1";
+                              ctx.fontSize = '22px';
+                              ctx.fillStyle = "#4D4D4D";
       ctx.fillText(``, 260, 125);
       
                               //AVATARً
@@ -2157,7 +2157,7 @@ member.guild.fetchInvites().then(guildInvites => {
   if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply(':x: **ليس لديك الصلاحيات الكافية**');
   if(!message.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply(':x: **ليس معي الصلاحيات الكافية**');
   message.channel.send(':white_check_mark:| **تم عمل الروم بنجاح**');
-  message.guild.createChannel(`Voice Online : [ ${message.guild.members.filter(m => m.voiceChannel).size} ]` , 'voice').then(c => {
+  message.guild.createChannel(`Knights Online : [ ${message.guild.members.filter(m => m.voiceChannel).size} ]` , 'voice').then(c => {
     console.log(`Voice online channel setup for guild: \n ${message.guild.name}`);
     c.overwritePermissions(message.guild.id, {
       CONNECT: false,
