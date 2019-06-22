@@ -2122,14 +2122,14 @@ member.guild.fetchInvites().then(guildInvites => {
                           ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
                               if (err) return console.log(err);
       
-                                    ctx.font = "bold 12px Arial";
-                              ctx.fontSize = '22px';
+                                    ctx.font = "bold 15px Arial";
+                              ctx.fontSize = '25px';
                               ctx.fillStyle = "#000000";
                                 ctx.fillText(member.user.username, 200, 150);
                               
                               //NAMEً
-                              ctx.font = "bold 12px Arial";
-                              ctx.fontSize = '22px';
+                              ctx.font = "bold 15px Arial";
+                              ctx.fontSize = '25px';
                               ctx.fillStyle = "#000000";
       ctx.fillText(``, 260, 125);
       
