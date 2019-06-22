@@ -153,14 +153,14 @@ client.on('message', message => {
 
 
    client.on('message', message => {
-	    if (message.content === prefix + 'sup') {
+	    if (message.content === prefix + 'safdfsd') {
               message.channel.send('**تم الارسال في الخاص** :white_check_mark: ');
                
             }
 }); 
 
 client.on('message', message => {
-            if (message.content === prefix + 'inv') {
+            if (message.content === prefix + 'iaSffd') {
               message.channel.send('**تم الارسال في الخاص** :white_check_mark: ');
                
             }
@@ -332,7 +332,7 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === prefix + "inv") {
+     if (message.content === prefix + "insdfg") {
 
 	     
  message.author.sendMessage(`
@@ -345,7 +345,7 @@ https://discordapp.com/oauth2/authorize?client_id=570719536249176064&permissions
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === prefix + "sup") {
+     if (message.content === prefix + "sugdfggp") {
 
 	     
  message.author.sendMessage(`
@@ -2094,7 +2094,8 @@ member.guild.fetchInvites().then(guildInvites => {
     const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
     const inviter = client.users.get(invite.inviter.id);
     const yumz = member.guild.channels.find("name", `${sChannel}`);
-     yumz.send(`<@${member.user.id}> joined by <@${inviter.id}>`);
+     yumz.send(`****Welcome To** **__Knights Of Darkness__** :revolving_hearts: :** <@${member.user.id}>`);
+     yumz.send(`**joined by :** <@${inviter.id}>`);
    //  yumz.send(`<@${member.user.id}> joined using invite code ${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
   }); 
       var Canvas = require('canvas')
@@ -2123,13 +2124,13 @@ member.guild.fetchInvites().then(guildInvites => {
       
                                     ctx.font = "bold 12px Arial";
                               ctx.fontSize = '22px';
-                              ctx.fillStyle = "#f1f1f1";
+                              ctx.fillStyle = "#000000";
                                 ctx.fillText(member.user.username, 200, 150);
                               
                               //NAMEً
                               ctx.font = "bold 12px Arial";
                               ctx.fontSize = '22px';
-                              ctx.fillStyle = "#4D4D4D";
+                              ctx.fillStyle = "#000000";
       ctx.fillText(``, 260, 125);
       
                               //AVATARً
