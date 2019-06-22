@@ -127,6 +127,48 @@ client.on('message', message => {
             }
 }); 
 
+client.on('message', message => {
+            if (message.content === prefix + 'joinclan') {
+              message.channel.send('**للانضمام ضع الشعار و تكلم مع رتبة مختبر**');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === 'باك') {
+              message.channel.send('**ولكمء ارحب من جآنا**');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === 'برب') {
+              message.channel.send('**تيتء الله معك يا حلو لآ تطول علينا**');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === 'الشعار') {
+              message.channel.send('**!KD,Name  شعارك بالديسكورد**');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === 'الشعار') {
+              message.channel.send('**を Name  شعارك باللعبة**');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === 'السلام عليكم') {
+              message.channel.send('**و عليكم السلام و رحمة الله و بركاته**');
+               
+            }
+}); 
+
 
 client.on('message', message => {
             if (message.content === prefix + 'help-en') {
