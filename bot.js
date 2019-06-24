@@ -90,55 +90,6 @@ if (message.content.startsWith('lollsasdfawed')) { /// This is The DMS Code Send
     }
 }); 
 
-
-client.on('message', message => {
-    if (message.content === (prefix + 'test')) {
-    message.channel.send({
-        embed: new Discord.RichEmbed()
-            .setColor('RANDOM')
-           .addField('**الاوامر العامة**')
-           .addField('»———————————————————«')
-            .addField('» `-server`  **لعرض معلومات السيرفر**')
-            .addField('» `-members`  **لعرض حالات الاعضاء**')
-            .addField('» `-bot`  **لعرض معلومات البوت**')
-            .addField('» `-user`  **لعرض معلومات عنك**')
-            .addField('» `-ping`  **لمعرفة سرعة البوت**')
-           .addField('» `-avatar @user`  **لعرض صورة اي شخص من خلال ايدي**')
-           .addField('» `-serveravatar`  **لعرض صورة السيرفر**')
-           .addField('» `-id`  **لعرض معلوماتك**')
-           .addField('» `-say`  **يكرر الكلام اللي تكتبه**')
-           .addField('» `-embed`  **يكرر الكلام اللي تكتبه في امبيد**')
-           .addField('» `-emojis`  **لعرض كل ايموجيات السيرفر**')
-           .addField('» `-new`  **لفتح تذكرة**')
-           .addField('» `-close`  **لاغلاق التذكرة**')
-           .addField('» `-temp`  **لعمل روم مؤقت**')
-           .addField('» `-uptime`  **لمعرفة كم وقت للبوت شغال**')
-           .addField('» `-color <number>`  **لاختيار اللون اللي تبيه**')
-           .addField('»———————————————————«')
-           .addField('**الاوامر الإدارية**')
-           .addField('»———————————————————«')
-           .addField('» `-bc`  **لارسال برودكاست مع اختيار نوع الرسالة**')
-           .addField('» `-servericon`  **لتغيير صورة السيرفر**')
-           .addField('» `-servername`  **لتغيير اسم السيرفر**')
-           .addField('» `-clear <number>`  **لمسح الشات بعدد**')
-           .addField('» `-move @user`  **لسحب عضو لروم صوتي**')
-           .addField('» `-mutechannel`  **لتقفيل الروم**')
-           .addField('» `-unmutechannel`  **لفتح الروم**')
-           .addField('» `-hchannel`  **لاخفاء الروم**')
-           .addField('» `-schannel`  **لاظهار الروم**')
-           .addField('» `-mute @user <time>`  **لاعطاء عضو ميوت**')
-           .addField('» `-unmute @user`  **لفك ميوت عن العضو**')
-           .addField('» `-kick @user <reason>`  **لطرد شخص من السيرفر**')
-           .addField('» `-ban @user <reason>`  **لمعرفة كم وقت للبوت شغال**')
-           .addField('» `-ccolors <number>`  **يصنع الوان مع اي عدد**')
-           .addField('» `-voiceonline`  **لتفعيل روم فويس اونلاين**')
-           .addField('» `-setwelcome #channel`  **لتحديد روم للترحيب**')
-    })       
-}
-});
-
-
-
 client.on('message', message => {
 if(message.author.bot) return;
 if(message.channel.type === 'dm') return;
