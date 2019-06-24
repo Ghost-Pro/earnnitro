@@ -34,28 +34,6 @@ var ti={}
 ,attentions={};
 
 
-client.on('message', message => {
-if(message.author.bot) return;
-if(message.channel.type === 'dm') return;
-    if(message.content.startsWith(prefix + 'test')) {
-     let filter = m => m.author.id === message.author.id;
- 
- let recembed = new Discord.RichEmbed()
- .setTitle(`${client.user.username}`)
- .setDescription(`
- 
-تم الارسال في الخاص ✅
-
- -=-=-=-=-=-=-=-=-=
- `)
- 
- message.channel.sendEmbed(recembed).then(msg => {
-     msg.react(':white_check_mark:')
-
-    })
-})
-    }});
-
 
 
  
