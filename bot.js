@@ -24,7 +24,28 @@ const fetchVideoInfo = require('youtube-info');
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
-const sql = require("sqlite");
+const sql = require("sqlite");client.on('message', message => {
+if(message.author.bot) return;
+if(message.channel.type === 'dm') return;
+    if(message.content.startsWith(prefix + 'test')) {
+     let filter = m => m.author.id === message.author.id;
+ 
+ let recembed = new Discord.RichEmbed()
+ .setTitle(`${client.user.username}`)
+ .setDescription(`
+ 
+تم الارسال في الخاص ✅
+
+ -=-=-=-=-=-=-=-=-=
+ `)
+ 
+ message.channel.sendEmbed(recembed).then(msg => {
+     msg.react(':white_check_mark:')
+
+    })
+})
+    }});
+
 const dateFormat = require('dateformat'); 
 const pretty = require('pretty-ms') 
 const prefix = '-';
@@ -33,6 +54,11 @@ var ti={}
 ,spee={}
 ,attentions={};
 
+
+
+
+
+ 
 var requestHelp = async function(type, user, message) {
     switch(type) {
         case "games":
