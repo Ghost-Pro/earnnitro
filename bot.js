@@ -93,122 +93,1058 @@ if (message.content.startsWith('lollsasdfawed')) { /// This is The DMS Code Send
 
 
 
+
 client.on('message', message => {
-          if(!profile[message.author.id]) profile[message.author.id] ={
-              points: 0,
-              level: 1
-          };
-          if(message.author.bot) return;
-          profile[message.author.id].points = Math.floor(profile[message.author.id].points+1);
-          if(profile[message.author.id].points > 100) {
-              profile[message.author.id].points = 0
-              profile[message.author.id].level = Math.floor(profile[message.author.id].level+1);
-              message.channel.send(`**${message.author.username}, You leveld up to __${profile[message.author.id].level}__**`)
-          }
-          fs.writeFile('profile.json', JSON.stringify(profile), (err) => {
-if (err) console.error(err);
-})
-})//AboRoh
- 
- 
-let profile = JSON.parse(fs.readFileSync("./profile.json", "utf8"))
-client.on("message", message => {
-  if (message.author.bot) return;
- if(!message.channel.guild)return;
-  if (!profile[message.author.id]) profile[message.author.id] = {
-    tite: 'HypeLC User',
-    rep: 0,
-   reps: 'NOT YET',
-   lastDaily:'Not Collected',
-    level: 0,
-    points: 0,
-    credits: 1,
-  };
-fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
-if (err) console.error(err);
-})
-});
- 
-client.on("message", (message) => {
-  let men = message.mentions.users.first()
-  if (message.author.bot) return;
-    if (message.author.id === client.user.id) return;
-    if(!message.channel.guild) return;
- if(message.content.startsWith( prefix + "credits")) {
-  if(men) {
-  if (!profile[men.id]) profile[men.id] = {
-   lastDaily:'Not Collected',
-   credits: 1,
- };
-  }
-  if(men) {
-message.channel.send(`** :money_with_wings: ${men.username},   balance` + " is " + `${profile[men.id].credits}` + "**")
-} else {
- message.channel.send(` :money_with_wings:  **Your** balance` + " is " + `${profile[message.author.id].credits}` + "")
-}
-}
-if(message.content.startsWith( prefix + "daily")) {
- 
- 
-  if(profile[message.author.id].lastDaily != moment().format('day')) {
-   profile[message.author.id].lastDaily = moment().format('day')
-   profile[message.author.id].credits += 250
-    message.channel.send(`You recieved your 200 daily credits!**`)
-} else {
-    message.channel.send(` :timer: | ${message.author.username}, You can get another **daily** **${moment().endOf('day').fromNow()}  **`)
-}
-}
-let cont = message.content.slice(prefix.length).split(" ");//AboRoh
-let args = cont.slice(2);
-let sender = message.author
-if(message.content.startsWith( prefix + "credits")) {
-if (!args[0])  {message.channel.send(``); //AboRoh
-         return;
-           }
-       
-        if (isNaN(args[0])) {
-            message.channel.send(``);//AboRoh
-            return;
-             }
-             if(profile[message.author.id].credits < args[0]) return message.channel.send(`** :thinking: | ${message.author.username}, Your balance is not enough for that!**`)
-if(args[0].startsWith("-")) return  message.channel.send('**!! I Cant Do it**');//AboRoh
-                 let defineduser = '';
-            let firstMentioned = message.mentions.users.first();
-            defineduser = (firstMentioned)
-           
-            if(defineduser.id === message.author.id) return message.channel.send("***Transfering to your self hah ?!***")
-            var mentionned = message.mentions.users.first();
-if (!profile[sender.id]) profile[sender.id] = {}
-if (!profile[sender.id].credits) profile[sender.id].credits = 200;
-fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
-if (err) console.error(err);//AboRoh
-})
-var x = ['5587' ,' 9978' , '3785' , '7734' , '7894' , '7681' , '3758' , '7834' , '3489' , '1382' , '1329' , '8762' , '0889' , '1088' , '3214' , '0015' , '8993' , '2832' , '4565' , '3512' , '9524' , '0964' , '5930' , '5678' , '9567' , '6099' , '7058' , '0001' , '1324' , '3458' , '7668' , '0378' , '1055' , '9733' , '0372' , '9846' , '9685' , '8574' , '8975' , '9845' , '9862' , '8069' , '9807' , '1673' , '0204' , '1235' , '3809'];
-var x2 = ['5587' ,' 9978' , '3785' , '7734' , '7894' , '7681' , '3758' , '7834' , '3489' , '1382' , '1329' , '8762' , '0889' , '1088' , '3214' , '0015' , '8993' , '2832' , '4565' , '3512' , '9524' , '0964' , '5930' , '5678' , '9567' , '6099' , '7058' , '0001' , '1324' , '3458' , '7668' , '0378' , '1055' , '9733' , '0372' , '9846' , '9685' , '8574' , '8975' , '9845' , '9862' , '8069' , '9807' , '1673' , '0204' , '1235' , '3809'];
-        var x3 = Math.floor(Math.random()*x.length)
-        message.channel.send(`** Are you sure you want to send <@${men.id}> credits?  ,  type \`${x[x3]}\` to complete **`).then(msg1=> {
-        var r = message.channel.awaitMessages(msg => msg.content == x2[x3], { maxMatches : 1, time : 600000, errors : ['time'] })
-       
-  r.catch(() => {
-            message.delete()
-            r.delete()
-            msg1.delete()
-          r.catch
-    })
-        r.then(s=> {
-      var mando = message.mentions.users.id;
-      if  (!profile[defineduser.id]) profile[defineduser.id] = {}
-      if (!profile[defineduser.id].credits) profile[defineduser.id].credits = 200;
-      profile[defineduser.id].credits += (+args[0]);
-      profile[sender.id].credits += (-args[0]);
-      let mariam = message.author.username
-message.channel.send(` You transferrerd ` + "" + args[0] + " to " + `<@${defineduser.id}>`)
-mentionned.send(`You Get  ${args[0]} from ${message.author.username} (ID: ${message.author.id})`);//AboRoh
+            if (message.content === prefix + 'help-js') {
+              message.channel.send('
+**
+»- •  ${prefix}help-js-source  - - - >  [ قسم السورس الاساسي ]
+
+»- •  ${prefix}help-js-admin  - - - >  [ قسم الاكواد الادارية ]
+
+»- •  ${prefix}help-js-general  - - - >  [ قسم الاكواد العامة ]
+
+»- •  ${prefix}help-js-welcome  - - - >  [ قسم اكواد الترحيب ]
+
+»- •  ${prefix}help-js-help  - - - >  [ قسم اكواد الهلب ]
+
+»- •  ${prefix}help-js-bc  - - - >  [ قسم اكواد البرودكاست ]
+
+»- •  ${prefix}help-js-games  - - - >  [ قسم اكواد الالعاب ]
+
+»- •  ${prefix}help-js-all  - - - >  [ قسم اكواد منوعة ]
+
+»- •  ${prefix}help-js-music  - - - >  [ قسم اكواد الموسيقي ]
+
+»- •  ${prefix}help-js-islam  - - - >  [ قسم اكواد القرآن ]
+
+»- •  ${prefix}help-js-own  - - - >  [ قسم اكواد اصحاب البوتات ]
+**
+');
                
-        })
-        })
-}
-});//AboRoh
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-source') {
+              message.channel.send('
+**• اكواد السورس المتوفرة**
+**
+»- •  ${prefix}help-js-source1   - - - >  [ السورس الاساسي ]
+
+»- •  ${prefix}help-js-source2   - - - > [ السورس الاساسي مع ستريمنق و معلومات البوت ]
+
+»- •  ${prefix}help-js-source3   - - - > [ السورس الاساسي مع ستريمنق و معلومات البوت ]
+
+»- •  ${prefix}help-js-source4   - - - > [ السورس الاساسي مع ستريمنق و معلومات البوت ]
+
+»- •  ${prefix}help-js-source5   - - - > [ السورس الاساسي المطور مع معلومات البوت  ]
+
+»- •  ${prefix}help-js-source6   - - - > [ السورس الاساسي مع واتشنق ]
+**
+');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-source-1') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-source-2') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-source-3') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-source-4') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-source-5') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-source-6') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin') {
+              message.channel.send('
+**• اكواد الادارة المتوفرة**
+**
+»- •  ${prefix}help-js-admin1  - - - >  [ كود الباند ]
+
+»- •  ${prefix}help-js-admin2  - - - >  [ كود الكيك ]
+
+»- •  ${prefix}help-js-admin3  - - - >  [ كود مسح الشات مع عدد ]
+
+»- •  ${prefix}help-js-admin4  - - - >  [ كود فتح و تقفيل الشات ]
+
+»- •  ${prefix}help-js-admin5  - - - >  [ كود رابط يرسله بالخاص ]
+
+»- •  ${prefix}help-js-admin6  - - - >  [ كود لانشاء شات كتابي ]
+
+»- •  ${prefix}help-js-admin7  - - - >  [ كود لانشاء روم صوتي ]
+
+»- •  ${prefix}help-js-admin8  - - - >  [ كود تم دعوته بواسطة ]
+
+»- •  ${prefix}help-js-admin9  - - - >  [ كود اوتو رول بتفعيل او الغاء تفعيل ]
+
+»- •  ${prefix}help-js-admin10  - - - >  [ كود مانع نشر روابط بتفعيل او الغاء تفعيل ]
+
+»- •  ${prefix}help-js-admin11  - - - >  [ كود لو احد نشر رابط ياخذ ميوت ]
+
+»- •  ${prefix}help-js-admin12  - - - >  [ كود مانع بوتات النشر ]
+
+»- •  ${prefix}help-js-admin 13  - - - >  [ كود تفعيل برياكشن ]
+
+»- •  ${prefix}help-js-admin14  - - - >  [ كود تفعيل بأمر ]
+
+»- •  ${prefix}help-js-admin15  - - - >  [ كود التحذير مثل برو بوت ]
+
+»- •  ${prefix}help-js-admin16  - - - >  [ كود بان صوتي و فكه ]
+
+»- •  ${prefix}help-js-admin17  - - - >  [ كود كيك صوتي ]
+
+»- •  ${prefix}help-js-admin18  - - - >  [ كود ديفن و ان ديفن ]
+
+»- •  ${prefix}help-js-admin19  - - - >  [ كود منع السب ]
+
+»- •  ${prefix}help-js-admin20  - - - >  [ كود رد تلقائي ]
+**
+');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-1') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-2') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-3') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-4') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-5') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-6') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-7') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-8') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-9') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-10') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-11') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-12') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-13') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-14') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-15') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-16') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-17') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-18') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-19') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-admin-20') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general') {
+              message.channel.send('
+**• الاكواد العامة المتوفرة**
+**
+»- •  ${prefix}help-js-general1  - - - >  [ كود البنق ]
+
+»- •  ${prefix}help-js-general2  - - - >  [ كود عند منشنة البوت يكتب لك هيلب ]
+
+»- •  ${prefix}help-js-general3  - - - >  [ كود التصويت مثل برو بوت ]
+
+»- •  ${prefix}help-js-general4  - - - >  [ كود معلومات السيرفر ]
+
+»- •  ${prefix}help-js-general5  - - - >  [ كود المعلومات الشخصية ]
+
+»- •  ${prefix}help-js-general6  - - - >  [ كود معلومات البوت مثل اس بوت ]
+
+»- •  ${prefix}help-js-general7  - - - >  [ كود اي دي ]
+
+»- •  ${prefix}help-js-general8  - - - >  [ كود ريب ]
+
+»- •  ${prefix}help-js-general9  - - - >  [ كود عمل روم فويس اونلاين ]
+
+»- •  ${prefix}help-js-general10  - - - >  [ كود افاتار مثل برو بوت ]
+
+»- •  ${prefix}help-js-general11  - - - >  [ كود الوان مثل برو بوت ]
+
+»- •  ${prefix}help-js-general12  - - - >  [ كود مسح شات بعدد او بدون عدد ]
+
+»- •  ${prefix}help-js-general13  - - - >  [ كود ايموجي ليست ]
+
+»- •  ${prefix}help-js-general14  - - - >  [ كود اخفاء جميع رومات السيرفر ]
+
+»- •  ${prefix}help-js-general15  - - - >  [ كود توب مثل بروبوت تكست و فويس ]
+
+»- •  ${prefix}help-js-general16  - - - >  [ كود ترسل رسالة الي خاص الشخص مع منشن ]
+
+»- •  ${prefix}help-js-general17  - - - >  [ كلام في الحب ]
+
+»- •  ${prefix}help-js-general18  - - - >  [ اعطاء رتب تلقائي عند دخول السيرفر ]
+**
+');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-1') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-2') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-3') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-4') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-5') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-6') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-7') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-8') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-9') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-10') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-11') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-12') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-13') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-14') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-15') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-16') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-17') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-general-18') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-welcome') {
+              message.channel.send('
+**• اكواد الترحيب المتوفرة**
+**
+»- •  ${prefix}help-js-welcome-1  - - - >  [ كود ترحيب مع ذكر رقم العضو ]
+
+»- •  ${prefix}help-js-welcome-2  - - - >  [ كود الترحيب مع صورة ]
+
+»- •  ${prefix}help-js-welcome-3  - - - >  [ كود مغادرة العضو ]
+
+»- •  ${prefix}help-js-welcome-4  - - - >  [ كود تم دعوته بواسطة ]
+
+»- •  ${prefix}help-js-welcome-5  - - - >  [ كود ترحيب بامبيد و مغادرة كذلك ]
+
+»- •  ${prefix}help-js-welcome-6  - - - >  [ كود ترحيب بصورة + invited by : ]
+
+»- •  ${prefix}help-js-welcome-7  - - - >  [ كود ترحيب معريب ]
+**
+');
+               
+            }
+}); 
+
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-welcome-1') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-welcome-2') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-welcome-3') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-welcome-4') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-welcome-5') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-welcome-6') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-welcome-7') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-help') {
+              message.channel.send('
+**• اكواد الهلب المتوفرة**
+**
+»- •  ${prefix}help-js-help-1  - - - >  [ كود هلب مع امبيد يريل بنفس الشات ]
+
+»- •  ${prefix}help-js-help-2  - - - >  [ كود هلب مزخرف بدون امبيد يرسل في الخاص ]
+
+»- •  ${prefix}help-js-help-3  - - - >  [ كود بامبيد علي الخاص ]
+
+»- •  ${prefix}help-js-help-4  - - - >  [ كود هلب برياكشن ]
+
+»- •  ${prefix}help-js-help-5  - - - >  [ كود هلب 3 صفحات برياكشن ]
+
+»- •  ${prefix}help-js-help-6  - - - >  [ كود هلب متعدد ]
+
+»- •  ${prefix}help-js-help-7  - - - >  [ كود هلب متعدد اللغات ]
+**
+');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-help-1') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-help-2') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-help-3') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-help-4') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-help-5') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-help-6') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-help-7') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-bc') {
+              message.channel.send('
+**• اكواد البرودكاست المتوفرة**
+**
+»- •  ${prefix}help-js-bc-1  - - - >  [ كود برودكاست للكل مطور ]
+
+»- •  ${prefix}help-js-bc-2  - - - >  [ كود برودكاست للكل غير مطور ]
+
+»- •  ${prefix}help-js-bc-3  - - - >  [ كود برودكاست للاونلاين مع منشن غير مطور ]
+
+»- •  ${prefix}help-js-bc-4  - - - >  [ كود برودكاست للكل مع منشن غير مطور ]
+
+»- •  ${prefix}help-js-bc-5  - - - >  [ كود برودكاست لاصدقائك ]
+
+»- •  ${prefix}help-js-bc-6  - - - >  [ كود برودكاست لجميع سيرفرات البوت ]
+
+»- •  ${prefix}help-js-bc-7  - - - >  [ كود برودكاست لشخص معين مع المنشن ]
+
+»- •  ${prefix}help-js-bc-8  - - - >  [ كود برودكاست برياكشن بامبيد او بدون ]
+
+»- •  ${prefix}help-js-bc-9  - - - >  [ كود برودكاست بدون اي شيء رسالة فقط ]
+**
+');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-bc-1') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-bc-2') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-bc-3') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-bc-4') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-bc-5') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-bc-6') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-bc-7') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-bc-8') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-bc-9') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games') {
+              message.channel.send('
+**• اكواد الالعاب المتوفرة**
+**
+»- •  ${prefix}help-js-games-1  - - - >  [لعبة اسئلة فورت نايت ]
+
+»- •  ${prefix}help-js-games-2  - - - >  [ لعبة صراحة ]
+
+»- •  ${prefix}help-js-games-3  - - - >  [ لعبة كت تويت ]
+
+»- •  ${prefix}help-js-games-4  - - - >  [ لعبة لو خيروك ]
+
+»- •  ${prefix}help-js-games-5  - - - >  [ لعبة مريم ]
+
+»- •  ${prefix}help-js-games-6  - - - >  [ لعبة عقاب ]
+
+»- •  ${prefix}help-js-games-7  - - - >  [ لعبة فكك تحتاج جيسون ]
+
+»- •  ${prefix}help-js-games-8  - - - >  [ لعبة قرعة ]
+
+»- •  ${prefix}help-js-games-9  - - - >  [ لعبة اكس او ]
+
+»- •  ${prefix}help-js-games-10  - - - >  [ لعبة اسرع كتابة ]
+
+»- •  ${prefix}help-js-games-11  - - - >  [ كود صراحة ]
+
+»- •  ${prefix}help-js-games-12  - - - >  [ كود قرعة ]
+
+»- •  ${prefix}help-js-games-13  - - - >  [ كود كت تويت ]
+
+»- •  ${prefix}help-js-games-14  - - - >  [ لعبة عواصم ]
+
+»- •  ${prefix}help-js-games-15  - - - >  [ لعبة ببجي ]
+
+»- •  ${prefix}help-js-games-16  - - - >  [ كود احصائيات فورت وايت ]
+
+»- •  ${prefix}help-js-games-17  - - - >  [ لعبة انمي ]
+
+»- •  ${prefix}help-js-games-18  - - - >  [ لعبة زاحف ]
+**
+');
+               
+            }
+}); 
+
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-1') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-2') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-3') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-4') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-5') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-6') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-7') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-8') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-9') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-10') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-11') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-12') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-13') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-14') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-15') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-16') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-17') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-games-18') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-all') {
+              message.channel.send('
+**•  اكواد منوعة المتوفرة**
+**
+»- •  ${prefix}help-js-all-1  - - - >  [ كود بروفايل بخلفيات ]
+
+»- •  ${prefix}help-js-all-2  - - - >  [ كود لفل اب بصورة ]
+
+«- •  ${prefix}help-js-all-3  - - - >  [ كود اكس بي كتابة ]
+
+»- •  ${prefix}help-js-all-4  - - - >  [ كود بروفايل خورافي ]
+
+»- •  ${prefix]help-js-all-5  - - - >  [ كود الرسم كانفاس ]
+**
+');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-all-1') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-all-2') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-all-3') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-all-4') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-all-5') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-music') {
+              message.channel.send('
+**🎶 اكواد الاغاني المتوفرة**
+**
+»- •  ${prefix}help-js-music-1  - - - >  [ كود الميوزك بالارقام ]
+
+»- •  ${prefix}help-js-music-2  - - - >  [ كود ميوزك جافا ]
+
+«- •  ${prefix}help-js-music-3  - - - >  [ كود الميوزك المتداول في الجيت هب ]
+**
+');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-music-1') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-music-2') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-music-3') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-islam') {
+              message.channel.send('
+** اكواد القرآن المتوفرة**
+**
+»- •  ${prefix}help-js-islam-1  - - - >  [ كود الاستماع للقرآن ]
+
+»- •  ${prefix}help-js-islam-2  - - - >  [ كود الاذكار ]
+
+«- •  ${prefix}help-js-islam-3  - - - >  [ كود صفحات القرآن ]
+**
+');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-islam-1') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-islam-2') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-islam-3') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+
+
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-own') {
+              message.channel.send('
+** اكواد اصحاب البوتات المتوفرة**
+**
+»- •  ${prefix}help-js-own-1  - - - >  [ كود ست بريفكس ]
+
+»- •  ${prefix}help-js-own-2  - - - >  [ كود اذا احد ارسل للبوت في الخاص تجيك انت ]
+
+«- •  ${prefix}help-js-own-3  - - - >  [ كود التحكم في حالات البوت ]
+
+»- •  ${prefix}help-js-own-4  - - - >  [ كود يرسل اقتراح لصاحب البوت ]
+**
+');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-own-1') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-own-2') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-own-3') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
+
+client.on('message', message => {
+            if (message.content === prefix + 'help-js-own-4') {
+              message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
+               
+            }
+}); 
 
 client.on('message', message => {
 if(message.author.bot) return;
