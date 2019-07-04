@@ -91,6 +91,125 @@ if (message.content.startsWith('lollsasdfawed')) { /// This is The DMS Code Send
     }
 }); 
 
+
+
+client.on('message', message => {
+          if(!profile[message.author.id]) profile[message.author.id] ={
+              points: 0,
+              level: 1
+          };
+          if(message.author.bot) return;
+          profile[message.author.id].points = Math.floor(profile[message.author.id].points+1);
+          if(profile[message.author.id].points > 100) {
+              profile[message.author.id].points = 0
+              profile[message.author.id].level = Math.floor(profile[message.author.id].level+1);
+              message.channel.send(`**${message.author.username}, You leveld up to __${profile[message.author.id].level}__**`)
+          }
+          fs.writeFile('profile.json', JSON.stringify(profile), (err) => {
+if (err) console.error(err);
+})
+})//AboRoh
+ 
+ 
+let profile = JSON.parse(fs.readFileSync("./profile.json", "utf8"))
+client.on("message", message => {
+  if (message.author.bot) return;
+ if(!message.channel.guild)return;
+  if (!profile[message.author.id]) profile[message.author.id] = {
+    tite: 'HypeLC User',
+    rep: 0,
+   reps: 'NOT YET',
+   lastDaily:'Not Collected',
+    level: 0,
+    points: 0,
+    credits: 1,
+  };
+fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
+if (err) console.error(err);
+})
+});
+ 
+client.on("message", (message) => {
+  let men = message.mentions.users.first()
+  if (message.author.bot) return;
+    if (message.author.id === client.user.id) return;
+    if(!message.channel.guild) return;
+ if(message.content.startsWith( prefix + "credits")) {
+  if(men) {
+  if (!profile[men.id]) profile[men.id] = {
+   lastDaily:'Not Collected',
+   credits: 1,
+ };
+  }
+  if(men) {
+message.channel.send(`** :money_with_wings: ${men.username},   balance` + " is " + `${profile[men.id].credits}` + "**")
+} else {
+ message.channel.send(` :money_with_wings:  **Your** balance` + " is " + `${profile[message.author.id].credits}` + "")
+}
+}
+if(message.content.startsWith( prefix + "daily")) {
+ 
+ 
+  if(profile[message.author.id].lastDaily != moment().format('day')) {
+   profile[message.author.id].lastDaily = moment().format('day')
+   profile[message.author.id].credits += 250
+    message.channel.send(`You recieved your 200 daily credits!**`)
+} else {
+    message.channel.send(` :timer: | ${message.author.username}, You can get another **daily** **${moment().endOf('day').fromNow()}  **`)
+}
+}
+let cont = message.content.slice(prefix.length).split(" ");//AboRoh
+let args = cont.slice(2);
+let sender = message.author
+if(message.content.startsWith( prefix + "credits")) {
+if (!args[0])  {message.channel.send(``); //AboRoh
+         return;
+           }
+       
+        if (isNaN(args[0])) {
+            message.channel.send(``);//AboRoh
+            return;
+             }
+             if(profile[message.author.id].credits < args[0]) return message.channel.send(`** :thinking: | ${message.author.username}, Your balance is not enough for that!**`)
+if(args[0].startsWith("-")) return  message.channel.send('**!! I Cant Do it**');//AboRoh
+                 let defineduser = '';
+            let firstMentioned = message.mentions.users.first();
+            defineduser = (firstMentioned)
+           
+            if(defineduser.id === message.author.id) return message.channel.send("***Transfering to your self hah ?!***")
+            var mentionned = message.mentions.users.first();
+if (!profile[sender.id]) profile[sender.id] = {}
+if (!profile[sender.id].credits) profile[sender.id].credits = 200;
+fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
+if (err) console.error(err);//AboRoh
+})
+var x = ['5587' ,' 9978' , '3785' , '7734' , '7894' , '7681' , '3758' , '7834' , '3489' , '1382' , '1329' , '8762' , '0889' , '1088' , '3214' , '0015' , '8993' , '2832' , '4565' , '3512' , '9524' , '0964' , '5930' , '5678' , '9567' , '6099' , '7058' , '0001' , '1324' , '3458' , '7668' , '0378' , '1055' , '9733' , '0372' , '9846' , '9685' , '8574' , '8975' , '9845' , '9862' , '8069' , '9807' , '1673' , '0204' , '1235' , '3809'];
+var x2 = ['5587' ,' 9978' , '3785' , '7734' , '7894' , '7681' , '3758' , '7834' , '3489' , '1382' , '1329' , '8762' , '0889' , '1088' , '3214' , '0015' , '8993' , '2832' , '4565' , '3512' , '9524' , '0964' , '5930' , '5678' , '9567' , '6099' , '7058' , '0001' , '1324' , '3458' , '7668' , '0378' , '1055' , '9733' , '0372' , '9846' , '9685' , '8574' , '8975' , '9845' , '9862' , '8069' , '9807' , '1673' , '0204' , '1235' , '3809'];
+        var x3 = Math.floor(Math.random()*x.length)
+        message.channel.send(`** Are you sure you want to send <@${men.id}> credits?  ,  type \`${x[x3]}\` to complete **`).then(msg1=> {
+        var r = message.channel.awaitMessages(msg => msg.content == x2[x3], { maxMatches : 1, time : 600000, errors : ['time'] })
+       
+  r.catch(() => {
+            message.delete()
+            r.delete()
+            msg1.delete()
+          r.catch
+    })
+        r.then(s=> {
+      var mando = message.mentions.users.id;
+      if  (!profile[defineduser.id]) profile[defineduser.id] = {}
+      if (!profile[defineduser.id].credits) profile[defineduser.id].credits = 200;
+      profile[defineduser.id].credits += (+args[0]);
+      profile[sender.id].credits += (-args[0]);
+      let mariam = message.author.username
+message.channel.send(` You transferrerd ` + "" + args[0] + " to " + `<@${defineduser.id}>`)
+mentionned.send(`You Get  ${args[0]} from ${message.author.username} (ID: ${message.author.id})`);//AboRoh
+               
+        })
+        })
+}
+});//AboRoh
+
 client.on('message', message => {
 if(message.author.bot) return;
 if(message.channel.type === 'dm') return;
